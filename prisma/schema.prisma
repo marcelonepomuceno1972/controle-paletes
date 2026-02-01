@@ -1,0 +1,44 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Entrada {
+  id         String   @id @default(cuid())
+  fornecedor String
+  tipoPalete String
+  quantidade Int
+  area       String
+  operador   String
+  observacao String?
+  createdAt  DateTime @default(now())
+}
+
+model Fornecedor {
+  id        String   @id @default(cuid())
+  nome      String
+  nomeNorm  String   @unique
+  createdAt DateTime @default(now())
+}
+
+model Movimentacao {
+  id          Int      @id @default(autoincrement())
+  origem      String?
+  destino     String
+  tipoPalete  String
+  quantidade  Int
+  fornecedor  String?
+  observacao  String?
+  createdAt   DateTime @default(now())
+}
+
+model Loja {
+  id        Int      @id @default(autoincrement())
+  digito    Int
+  nome      String
+  createdAt DateTime @default(now())
+}
