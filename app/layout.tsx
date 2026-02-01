@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Controle de Paletes",
-description: "Gestão e rastreabilidade de paletes",
+  description: "Sistema para gestão e movimentação logística de paletes",
 };
 
 export default function RootLayout({
