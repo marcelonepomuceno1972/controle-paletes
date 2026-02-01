@@ -2,9 +2,13 @@
   "name": "controle-paletes",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
+  "prisma": {
+    "schema": "prisma/schema.prisma"
+  },
   "scripts": {
     "dev": "next dev",
-    "build": "prisma generate && next build",
+    "build": "npx prisma generate && next build",
     "start": "next start"
   },
   "dependencies": {
