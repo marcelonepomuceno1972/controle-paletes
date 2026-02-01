@@ -15,35 +15,35 @@ export default function HomePage() {
         <div className="mt-10 space-y-4">
           <Link
             href="/entrada"
-            className="block w-full rounded-xl bg-blue-600 text-white py-4 text-xl font-semibold hover:bg-blue-700"
+            className="block w-full rounded-xl bg-blue-600 text-white py-4 text-xl font-semibold hover:bg-blue-700 transition"
           >
             Registrar Entrada
           </Link>
 
           <Link
             href="/saida"
-            className="block w-full rounded-xl bg-green-600 text-white py-4 text-xl font-semibold hover:bg-green-700"
+            className="block w-full rounded-xl bg-green-600 text-white py-4 text-xl font-semibold hover:bg-green-700 transition"
           >
             Registrar Saída
           </Link>
 
           <Link
             href="/retorno-loja"
-            className="block w-full rounded-xl bg-purple-600 text-white py-4 text-xl font-semibold hover:bg-purple-700"
+            className="block w-full rounded-xl bg-purple-600 text-white py-4 text-xl font-semibold hover:bg-purple-700 transition"
           >
             🔁 Retorno de Loja
           </Link>
 
           <Link
             href="/painel"
-            className="block w-full rounded-xl bg-gray-900 text-white py-4 text-xl font-semibold hover:bg-black"
+            className="block w-full rounded-xl bg-gray-900 text-white py-4 text-xl font-semibold hover:bg-black transition"
           >
-            Dashboard
+            Painel
           </Link>
 
           <Link
             href="/saldos"
-            className="block w-full rounded-xl bg-white text-gray-900 py-4 text-xl font-semibold border hover:bg-gray-50"
+            className="block w-full rounded-xl bg-white text-gray-900 py-4 text-xl font-semibold border hover:bg-gray-50 transition"
           >
             Saldo por Área
           </Link>
