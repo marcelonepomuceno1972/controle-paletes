@@ -79,6 +79,15 @@ export default async function Painel() {
     0
   );
 
+  /* ===========================
+     EXPORTAÇÃO EXCEL
+     =========================== */
+  const hoje = new Date();
+  const mes = String(hoje.getMonth() + 1).padStart(2, "0");
+  const ano = hoje.getFullYear();
+
+  const excelUrl = `/api/relatorios/excel?mes=${mes}&ano=${ano}`;
+
   return (
     <main className="min-h-screen bg-gray-100 p-6">
       <div className="mx-auto max-w-7xl bg-white rounded-xl shadow p-6 space-y-6">
@@ -93,19 +102,29 @@ export default async function Painel() {
             </p>
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <Link
               href="/entrada"
               className="px-4 py-2 rounded-lg bg-gray-900 text-white hover:bg-gray-800"
             >
               Nova Entrada
             </Link>
+
             <Link
               href="/movimentacao"
               className="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700"
             >
               Nova Movimentação
             </Link>
+
+            {/* 🔽 BOTÃO EXCEL */}
+            <a
+              href={excelUrl}
+              target="_blank"
+              className="px-4 py-2 rounded-lg bg-green-600 text-white hover:bg-green-700"
+            >
+              Exportar Excel
+            </a>
           </div>
         </header>
 
@@ -132,11 +151,8 @@ export default async function Painel() {
                       {totalLogistica}
                     </p>
 
-                    {/* SEMÁFORO */}
                     <div className="text-right">
-                      <p
-                        className={`text-sm font-bold ${statusLogistica.cor}`}
-                      >
+                      <p className={`text-sm font-bold ${statusLogistica.cor}`}>
                         {statusLogistica.label}
                       </p>
                       <p className="text-xs text-gray-500">
